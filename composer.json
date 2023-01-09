@@ -1,77 +1,35 @@
 {
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "gnosis93/flysystem-google-drive",
+    "description": "Flysystem adapter for Google Drive",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Naoki Sawada",
+            "email": "hypweb@gmail.com"
+        }
+    ],
     "require": {
-        "php": "^8.0.2",
-        "barryvdh/laravel-dompdf": "^2.0",
-        "doctrine/dbal": "^3.3",
-        "guzzlehttp/guzzle": "^7.2",
-        "intervention/image": "^2.7",
-        "laravel/framework": "^9.19 ",
-        "laravel/jetstream": "^2.9",
-        "laravel/sanctum": "^2.14.1",
-        "laravel/tinker": "^2.7",
-        "league/csv": "^9.8",
-        "livewire/livewire": "^2.10",
-        "spatie/laravel-backup": "^8.1",
-        "gnosis93/flysystem-google-drive": "dev-master"
+        "php": ">=5.4.0",
+        "league/flysystem": "^3.11",
+        "google/apiclient": "^2.0",
+        "nao-pon/flysystem-cached-extra": "~1.0"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.9.1",
-        "laravel/sail": "^1.0.1",
-        "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^6.1",
-        "phpmd/phpmd": "^2.12",
-        "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0",
-        "squizlabs/php_codesniffer": "^3.7"
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "0.9.*"
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
-        ],
-        "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
-        ],
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
-        ]
-    },
-    "extra": {
-        "laravel": {
-            "dont-discover": []
+            "Hypweb\\Flysystem\\GoogleDrive\\": "src/"
         }
     },
     "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
+        "bin-dir": "bin"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/gnosis93/flysystem-google-drive.git"
+    "extra": {
+        "branch-alias": {
+            "dev-api_v2": "1.0.x-dev",
+            "dev-master": "1.1.x-dev"
         }
-    ]
+    }
 }
