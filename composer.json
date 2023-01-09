@@ -1,5 +1,5 @@
 {
-    "name": "nao-pon/flysystem-google-drive",
+    "name": "gnosis93/flysystem-google-drive",
     "description": "Flysystem adapter for Google Drive",
     "license": "MIT",
     "authors": [
